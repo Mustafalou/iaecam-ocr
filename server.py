@@ -1,13 +1,18 @@
 from flask import Flask, request, render_template
 import cv2
-import pytesseract
+# import pytesseract
 import glob
 import boto3
+import json
+
+
+with open("pass.json","r")as f:
+    data = json.load(f)
+    ACCESS_KEY_ID = data["ACCESS_KEY_ID"]
+    ACCESS_SECRET_KEY=data["ACCESS_SECRET_KEY"]
 #pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 app = Flask(__name__)
-ACCESS_KEY_ID="AKIARHU46NYD3RAYV33X"
-ACCESS_SECRET_KEY="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"
 textract = boto3.client('textract',
                         aws_access_key_id=ACCESS_KEY_ID,
                         aws_secret_access_key = ACCESS_SECRET_KEY, region_name='us-east-1')

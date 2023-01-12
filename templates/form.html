@@ -2,15 +2,16 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <script src="../static/js/util.js"></script>
 </head>
-<form action="/" method="post" enctype="multipart/form-data" id="upload-form">
+<form action="/" method="post" enctype="multipart/form-data" id="upload-form" onchange="loadFile(event)">
     <div>
         <label for="file">Choose a file or drop here:</label>
-        <input type="file" name="file" id="file" accept="image/*" capture>
+        <input type="file" name="file" id="file" accept="image/*,application/pdf" capture>
     </div>
+    <div><img id="outputimage" src="" alt=""  hidden/>
+        <iframe src="" id ="outputpdf" frameborder="0" hidden></iframe>
+    </div>
+
     <div>
         <input type="submit" value="Upload">
-    </div>
-    <div>
-        <img id="preview-img" src="" alt="Preview Image">
     </div>
 </form>
