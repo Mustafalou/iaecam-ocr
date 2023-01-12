@@ -1,0 +1,41 @@
+Examen d’électronique janvier 2021
+
+Question! O p 5
+
+Sur base du contenu du set d’instructions, explique comment I’instruction "MULWF
+0x56,0’ est executée par le PIC18F46K22.
+
+x Partie 1 : Quelle action est réalisée par cette instruction ?
+
+MOL WF OxSS.0  eeft action abt li
+Graben du WREG flor (FO), cnecmal
+& 2 Fas de fea qu ae Oy Mi ABion wr
+
+Actos Barbe
+
+Partie 2 : Quel est l’encodage binaire de cette instruction?
+
+~
+
+aoa ata $885 Rasy
+
+7? Cac RAG Q4AQH BAAQ
+
+N
+x Partie 3 : Quel est le type d’adressage de cette instruction? Explique en détail le
+déroulement de celui-ci (00 se trouve l’adresse, Gonna! on y accéder, ce a ‘onen
+
+fait,...)
+—_—
+
+a mau Morr chorele,
+; le & POPCODE. :
+
+togsit ; ee Qu
+
+eae 1 Bree Qz
+
+I Fla t Present ay
+
+4™ Flare | Efe
+= (Gs Mri A torbicctlow Piodustion

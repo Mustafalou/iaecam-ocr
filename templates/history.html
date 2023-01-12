@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Images</th>
+            <th>Results</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for i in range(images|length) %}
+        <tr>
+          <td><img src={{url_for( "static", filename=images[i][7:])}} alt="Uploaded Image" width="320" height="240"></td>
+          <td><embed src = {{url_for("static", filename=results[i][7:])}} width="320" height="240"></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  
+  
+  

@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Image and OCR Text</title>
+    </head>
+    <body>
+        <img src={{url_for( "static", filename="images/"+image + "." + ext)}} alt="Uploaded Image" width="320" height="240">
+        <embed src = {{url_for("static", filename="results/"+image+".txt")}} width="320" height="240">
+        <a href= {{url_for("static", filename="results/"+image+".txt")}} download="result_{{image}}.txt">Download Text File</a>
+    </body>
+</html>
