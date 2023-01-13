@@ -4,7 +4,7 @@ a {
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 2rem;
     height: 70px;
     align-items: center;
@@ -69,6 +69,7 @@ a {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin: auto;
 }
 
 .navbar-container .nav-items .login-register .button {

@@ -1,7 +1,7 @@
 /* GLOBAL STYLES */
 body {
-  /* background: #5D6D7E; */
-  background-image : url(../css/71578.jpg);
+  background: #1C2833;
+  /* background-image : url(../css/71578.jpg); */
   padding-top: 5em;
   display: flex;
   justify-content: center;
@@ -9,6 +9,10 @@ body {
   justify-content: center;
 }
 .bouton {
+	box-shadow: 0px 0px 10px #ccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 50%;
 	height: 25%;
 	margin: 20px auto;
