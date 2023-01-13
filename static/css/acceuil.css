@@ -1,22 +1,65 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
-html,
+/* GLOBAL STYLES */
 body {
-  font-family: 'Roboto Mono', monospace;
-  background: #212121;
-  height: 100%;
-}
-.container {
-  height: 100%;
-  width: 100%;
+  /* background: #5D6D7E; */
+  background-image : url(../css/71578.jpg);
+  padding-top: 5em;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  justify-content: center;
 }
-.text {
-  font-weight: 100;
-  font-size: 28px;
-  color: #fafafa;
+.bouton {
+	width: 50%;
+	height: 25%;
+	margin: 20px auto;
+	padding: 10px 20px;
+	border-radius: 5px;
+	background-color: #2E4053;
+	color: white;
+	font-size: 18px;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	position: absolute;
+	bottom: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+	animation-duration: 4s;
+	animation-name: clignoter;
+	animation-iteration-count: infinite;
+	transition: none;
+  }
+
+
+ @keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+ }
+/* DEMO-SPECIFIC STYLES */
+.typewriter p {
+font-size: 25px;
+text-align: center;
+  color: white;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #2E4053; /* The typwriter cursor */
+  white-space: normal; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .1em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
 }
-.dud {
-  color: #757575;
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #2E4053 }
 }

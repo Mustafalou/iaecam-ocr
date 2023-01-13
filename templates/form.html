@@ -6,7 +6,7 @@
     {% extends 'navbar.html' %}
     {% block title %}Home{% endblock %}
     {% block content %}
-
+<div class="hist">
 <form action="/" method="post" enctype="multipart/form-data" id="upload-form" onchange="loadFile(event)">
     <div>
         <label for="file">Choose a file or drop here:</label>
@@ -20,5 +20,5 @@
         <input type="submit" value="Upload">
     </div>
 </form>
-
+</div>
 </body>{% endblock %}
