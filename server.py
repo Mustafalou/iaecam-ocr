@@ -39,8 +39,8 @@ def upload_file():
                         image.save(fname, "PNG")
 
                 else:
-                    file.save('static/images/'+number+"."+ext)
-                with open('static/images/'+number+'.'+ext, 'rb') as file:
+                    file.save('static/images/'+number+"."+'png')
+                with open('static/images/'+number+'.png', 'rb') as file:
                     bytes_test = file.read()
 
                 response = textract.analyze_document(Document={'Bytes': bytes_test},
