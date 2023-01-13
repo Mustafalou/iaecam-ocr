@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-import cv2
 import glob
 import boto3
 import json
