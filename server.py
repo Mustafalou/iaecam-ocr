@@ -1,39 +1,47 @@
 from flask import Flask, request, render_template
-import cv2
-# import pytesseract
 import glob
 import boto3
 import json
-
+from pdf2image import convert_from_bytes
 
 with open("pass.json","r")as f:
     data = json.load(f)
     ACCESS_KEY_ID = data["ACCESS_KEY_ID"]
     ACCESS_SECRET_KEY=data["ACCESS_SECRET_KEY"]
-#pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 app = Flask(__name__)
 textract = boto3.client('textract',
                         aws_access_key_id=ACCESS_KEY_ID,
                         aws_secret_access_key = ACCESS_SECRET_KEY, region_name='us-east-1')
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/', methods=['GET'])  
+def home():
+    return render_template('acceuil.html')  
+
+@app.route('/process', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files.get('file')
         if file:
             # Vérifie que le fichier est une image ou un pdf
             if file.mimetype.startswith('image/') or file.mimetype == 'application/pdf':
+                ext = file.mimetype.split("/")[-1]
                 # Enregistrer le fichier
+                
                 images = glob.glob("static/images/*")
                 number = str(len(images))
-                file.save('static/images/'+number+".png")
-                image = "static/images/"+number+".png"
-                image = cv2.imread(image)
+                if ext == "pdf":
+                    images = convert_from_bytes(file.read(),poppler_path="C:/Users/yilma/OneDrive/Bureau/poppler-22.12.0/Library/bin")
+                    ext="png"
+                    for i, image in enumerate(images):
+                        fname = "static/images/"+number+'.png'
+                        image.save(fname, "PNG")
 
-                #text = pytesseract.image_to_string(image)
+                else:
+                    file.save('static/images/'+number+"."+'png')
                 with open('static/images/'+number+'.png', 'rb') as file:
-                    img_test = file.read()
-                    bytes_test = bytearray(img_test)
+                    bytes_test = file.read()
+
                 response = textract.analyze_document(Document={'Bytes': bytes_test},
                                                     FeatureTypes = ['TABLES'])
                 blocks = response['Blocks']
