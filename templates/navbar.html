@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../static/css/stylenavbar.css">
+    <title>{% block title %}Default Title{% endblock %}</title>
+</head>
+<body>
+    <navbar class="navbar-container">
+        <ul class="nav-items">
+            <div class="login-register">
+                <a href="/" class="button">Home</a>
+                <a href="/history" class="button">Historique</a>
+            </div>
+        </ul>
+    </navbar>
+    {% block content %}{% endblock %}
+</body>
+</html>

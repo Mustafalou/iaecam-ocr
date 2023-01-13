@@ -2,10 +2,16 @@
 <html>
     <head>
         <title>Image and OCR Text</title>
+        <link rel="stylesheet" href="../static/css/result.css">
+        <script src=""></script>
     </head>
     <body>
-        <img src={{url_for( "static", filename="images/"+image + "." + ext)}} alt="Uploaded Image" width="320" height="240">
-        <embed src = {{url_for("static", filename="results/"+image+".txt")}} width="320" height="240">
-        <a href= {{url_for("static", filename="results/"+image+".txt")}} download="result_{{image}}.txt">Download Text File</a>
+        <h1 class="h1">Résultat</h1>
+        <div id="upload-form" class="image-uploaded">
+        <img src={{url_for( "static", filename="images/"+image + "." + ext)}} alt="" width="320" height="240" class="preview-img">
+        <embed src = {{url_for("static", filename="results/"+image+".txt")}} width="320" height="240" class="preview-txt">
+        <a href= {{url_for("static", filename="results/"+image+".txt")}} download="result_{{image}}.txt" class="download-txt" id="">Download Text File</a>
+        </div>
     </body>
 </html>
+

@@ -55,6 +55,7 @@ def show_history():
         result_files[i] = result_files[i].replace("\\","/")
         image_files[i] = image_files[i].replace("\\","/")
     return render_template("history.html", images = image_files, results = result_files) 
+    
 
 
 if __name__ == '__main__':
